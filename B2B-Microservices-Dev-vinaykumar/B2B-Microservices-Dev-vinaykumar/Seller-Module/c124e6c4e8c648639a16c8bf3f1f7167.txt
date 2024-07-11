@@ -1,0 +1,48 @@
+POJO : 
+- > A class which should compile by java compiler without adding jar files to classpath.
+JavaBean : 
+- > public modifier and constructor  with no args, private, getters and setters, implement 
+    seriazable or extenizable.
+Spring Bean :
+- > whatever the class we have in spring it has methods called by container ioc (inversion of control).
+1). How 
+2). Modular Frame Work : Breaking the code into diff layers(modularity).
+3). POJI(Plain old java interface) / POJO.
+4). Non - Invasive : It doesn't force a programmer to extend or implement their class from any predefined class or interface given by Spring API.
+5). 
+6). 
+7). Dependency Injection -  2 types dependency look up(the ability of the container to override methods on container-managed beans and return the lookup result for another named bean in the container.).
+                                                  Injection.
+8). Versatile - can interact with multiple frameworks.
+9). IOC Contanier - 1) Bean factory.
+                    2) Application context.
+--------------------------------------------------------------------------------------------------------------------------------------------
+Spring core - orm, mvc, jdbc, sc, ap (for everthing we have to use spring core).
+Annotation config :  
+Spring Annotation : 
+- >  Stereo type Anotations : They are used for to make our java class as Spring bean. The Spring bean lifecycle is maintained by spring ioc container.We have 4 stereo type annoatations
+1) @Component ->  If we dont know wt class exactly doing u can make class as a spring bean using this annotation.
+2) @service ->  If we know that class logic acting as a service we use this annotation.
+3) @repository -> If the class acting as DAO(data acces object) layer then use this annotation.
+4) @controller -> If we know the class dealing with request response flow we use this annotation.
+Note : We can interchange service with repo and repo with service.
+            We cannot interchange controller with any other annotation.
+- > If we place any of the above annotations on top of class that clas becomes as a spring bean class.
+- > @component is a parent annotation for three anotation service, repository, controller.
+* componentscan : 
+- > @componentscan :it is scan our given package and sub packages also and identify which r all spring bean classes.Those classes will handover to the ioc container.
+     @componentscan (basepackages = "com.pack1") - > it scans for pack1 and subpackages.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+*Dependency injection :  spring ioc container automatically inject the object or data to our class varaible directly.
+1) setter injection - > injection the data or object by calling setter method of the variable.
+2) constructor injection - > injection the data or object by calling parameterized constructor.
+3) interface injection
+4) lookup method injection
+* Autowired:
+- > @Autowired -  Combing spring beans with the spring ioc container with spring ioc container.
+      Spring ioc container will inject the object to variable of a class by following below three autowiring startegies.
+    !) byName - If property name  is matched with the object refernce name then spring will inject the object by using byName startegy.
+     - > property type is matched object  type .
+ 2)byType if we degine parametrized constructot by the class then spring will injectthe object by calling th ecponstructor
+  - > to tell spring ioc container to inject a object or value to variable use @autowired(object type) or @values(primitive or string) constructor.
+3)constructor 
